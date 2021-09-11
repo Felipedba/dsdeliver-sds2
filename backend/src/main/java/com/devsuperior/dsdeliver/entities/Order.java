@@ -1,4 +1,4 @@
-package com.devsuperior.dsdeliver.entities;
+package com.devSuperior.dsdeliver.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -28,14 +28,15 @@ public class Order implements Serializable {
 	private Double longitude;
 	private Instant moment;
 	private OrderStatus status;
-	
+
 	@ManyToMany
-	@JoinTable(name = "tb_order_product",
-		joinColumns = @JoinColumn(name = "order_id"),
-		inverseJoinColumns = @JoinColumn(name = "product_id"))
-	private Set<Product> products = new HashSet<>();
-	
+	@JoinTable(name = "tb_order_product", 
+			   joinColumns = @JoinColumn(name = "order_id"), 
+			   inverseJoinColumns = @JoinColumn(name = "product_id"))
+	private Set<Product> products = new HashSet<Product>();
+
 	public Order() {
+
 	}
 
 	public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
@@ -123,5 +124,6 @@ public class Order implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}	
+	}
+
 }

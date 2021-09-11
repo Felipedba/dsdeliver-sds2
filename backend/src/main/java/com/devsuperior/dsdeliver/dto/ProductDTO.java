@@ -1,12 +1,12 @@
-package com.devsuperior.dsdeliver.dto;
+package com.devSuperior.dsdeliver.dto;
 
 import java.io.Serializable;
 
-import com.devsuperior.dsdeliver.entities.Product;
+import com.devSuperior.dsdeliver.entities.Product;
 
-public class ProductDTO implements Serializable {
+public class ProductDTO implements Serializable{
 
-	private static final long serialVersionUID = 1L; 
+	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
@@ -14,18 +14,20 @@ public class ProductDTO implements Serializable {
 	private String description;
 	private String imageUri;
 	
-	public ProductDTO(){
+	public ProductDTO() {	
 	}
 
 	public ProductDTO(Long id, String name, Double price, String description, String imageUri) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.description = description;
 		this.imageUri = imageUri;
 	}
-
+	
 	public ProductDTO(Product entity) {
+		super();
 		id = entity.getId();
 		name = entity.getName();
 		price = entity.getPrice();
@@ -72,4 +74,8 @@ public class ProductDTO implements Serializable {
 	public void setImageUri(String imageUri) {
 		this.imageUri = imageUri;
 	}
+	
+	
+	
+	
 }

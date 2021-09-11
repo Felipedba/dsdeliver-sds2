@@ -1,4 +1,4 @@
-package com.devsuperior.dsdeliver;
+package com.devSuperior.dsdeliver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
